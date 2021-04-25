@@ -15,22 +15,47 @@ public class Task3 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter string with spaces: ");
-        String str = scanner.nextLine();
-        String ridSpace = ridMultipleBlank(str);
-        System.out.print("Enter string with integers: ");
-        String str2 = scanner.nextLine();
-        String ridNum = removeInteger(str2);
-        System.out.print("Enter string to encrypt: ");
-        String str3 = scanner.nextLine();
-        String Encrypt = stringEncryption(str3);
-      //  String Encrypt = stringEncryption(3);
+        Scanner obj = new Scanner(System.in);
+        
+        System.out.println("Select the option");
+        System.out.println("1. Rid Multiple Blank Spaces. ");
+        System.out.println("2. Remove Integers.");
+        System.out.println("3. String Encryption.");
+        System.out.print("Enter option: ");
+        
+        int option;
+        option = obj.nextInt();
+        
+        if(option == 1)
+        {
+            System.out.print("Enter string with spaces: ");
+            String str = scanner.nextLine();
+            String ridSpace = ridMultipleBlank(str);
+            System.out.println("Updated string is: " + ridSpace);
+        }
+        else if(option == 2)
+        {
+            System.out.print("Enter string with integers: ");
+            String str = scanner.nextLine();
+            String ridNum = removeInteger(str);
+            System.out.println("Updated string is: " + ridNum);
 
-        System.out.println("Updated string is: " + ridSpace);
-        System.out.println("Updated string is: " + ridNum);
-        //System.out.println("Encrypted string is: " + Encrypt);
+        }
+        else if(option == 3)
+        {
+            System.out.print("Enter string to encrypt: ");
+            String str = scanner.nextLine();
+            String Encrypt = stringEncryption(str);   
+            System.out.println("Encrypted string is: " + Encrypt);
+        }
+        else 
+        {
+            System.out.println("You have entered invalid option.");
+        }
     }
+    
     public static String ridMultipleBlank(String s)
     {
         String str = "";
