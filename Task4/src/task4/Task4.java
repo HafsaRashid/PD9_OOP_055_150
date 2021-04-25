@@ -22,7 +22,8 @@ public class Task4 {
         int option;
         option = obj.nextInt();
         
-        if (option == 1) {
+        if (option == 1) 
+        {
             int count = 0;
             System.out.print("Enter string: ");
             String str = scanner.nextLine();
