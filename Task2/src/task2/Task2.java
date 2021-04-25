@@ -44,7 +44,11 @@ public class Task2 {
         // TODO code application logic here
         Scanner obj  = new Scanner(System.in);
         String s="";
+
         System.out.println("Enter a string: \n");
+
+        System.out.println("Enter a sentence to print vertically: \n");
+
         s=obj.nextLine();
         System.out.println("Your sentence printed vertically is: \n"+displayVertical(s));
         
