@@ -25,9 +25,11 @@ public class Task3 {
         System.out.print("Enter string to encrypt: ");
         String str3 = scanner.nextLine();
         String Encrypt = stringEncryption(str3);
+      //  String Encrypt = stringEncryption(3);
+
         System.out.println("Updated string is: " + ridSpace);
         System.out.println("Updated string is: " + ridNum);
-        System.out.println("Encrypted string is: " + Encrypt);
+        //System.out.println("Encrypted string is: " + Encrypt);
     }
     public static String ridMultipleBlank(String s)
     {
