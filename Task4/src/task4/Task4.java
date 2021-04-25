@@ -20,7 +20,7 @@ public class Task4 {
         // TODO code application logic here
         int count = 0;
         Scanner scanner = new Scanner(System.in);
-        /*System.out.print("Enter string: ");
+        System.out.print("Enter string: ");
         String str = scanner.nextLine();
         boolean newStr = isPalindrome(str);
         if (newStr == true) 
@@ -29,11 +29,11 @@ public class Task4 {
         } else 
         {
             System.out.println("String is not palindrome");
-        } */ 
-        /*System.out.print("Enter string to reverse: ");
+        }  
+        System.out.print("Enter string to reverse: ");
         String str1 = scanner.nextLine();
         String s = reverse(str1);
-        System.out.println(s);*/
+        System.out.println(s);
         
         System.out.print("Enter string with Alphabets: ");
         String str2 = scanner.nextLine();
@@ -83,8 +83,6 @@ public class Task4 {
         }
         return str;
     }
-    
-   
 }
 
     /*public static String removeDuplicateWords(String s)
