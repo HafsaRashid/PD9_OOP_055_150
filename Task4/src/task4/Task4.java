@@ -19,22 +19,23 @@ public class Task4 {
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner scanner = new Scanner(System.in);
+        Scanner obj = new Scanner(System.in);
         System.out.println("Select the option");
         System.out.println("1. Check if string is palindrome.");
         System.out.println("2. Reverse the string.");
         System.out.println("3. Remove alphabets from string.");
         System.out.println("4. Check if one string starts with other.");
         System.out.println("5. Check if one string ends with other.");
-        System.out.println("6. Convert a string to lower case.");
+        System.out.println("6. Remove duplicate words.");
         System.out.println("7. Count punctuation marks in a string");
+        System.out.print("Enter option: ");
         int option;
-        option = scanner.nextInt();
-        String string = "";
+        option = obj.nextInt();
         if (option == 1) {
             int count = 0;
             System.out.print("Enter string: ");
-            string = scanner.nextLine();
-            boolean newStr = isPalindrome(string);
+            String str = scanner.nextLine();
+            boolean newStr = isPalindrome(str);
             if (newStr == true) {
                 System.out.println("String is palindrome");
             } else {
@@ -73,16 +74,18 @@ public class Task4 {
                 System.out.print("First string doesn't ends with second string.");
             }
         } else if (option == 6) {
-            System.out.println("Enter a string: ");
+            System.out.print("Enter a string: ");
             String str = scanner.nextLine();
-            String s = lowercase(str);
-            System.out.println("Lower case string is: " + s);
+            String newStr = removeDuplicateWords(str);
+            System.out.print("Updated String is: " + newStr);
         } else if (option == 7) {
-            System.out.println("Enter string: ");
+            System.out.print("Enter a string: ");
             String str = scanner.nextLine();
             int i = puncCount(str);
-            System.out.println("There are " + i + "punctuation marks.");
-        } else {
+            System.out.println("There are " + i + " punctuation marks.");
+        }
+        
+        else {
             System.out.print("You have entered invalid option.");
         }
     }
@@ -166,5 +169,24 @@ public class Task4 {
             }
         }
         return count;
+    }
+    
+    public static String removeDuplicateWords(String s)
+    {
+        int length = s.length();
+        String str = "";
+        String [] arr = s.split(" ");
+        for(int i = 0; i < arr.length; i++)
+        {
+            for(int j = i+1; j < arr.length; j++)
+            {
+                if(arr[i].equals(arr[j]))
+                {
+                    str = s.replace(arr[i], "");
+                    
+                }
+            }
+        }
+        return str;
     }
 }
