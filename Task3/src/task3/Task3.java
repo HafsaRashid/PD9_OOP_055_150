@@ -4,7 +4,10 @@
  * and open the template in the editor.
  */
 package task3;
-import java.util.Scanner;
+import java.io.UnsupportedEncodingException;
+import java.util.*;    
+import java.util.logging.Level;
+import java.util.logging.Logger;
 public class Task3 {
 
     /**
@@ -21,7 +24,7 @@ public class Task3 {
         String ridNum = removeInteger(str2);
         System.out.print("Enter string to encrypt: ");
         String str3 = scanner.nextLine();
-        String Encrypt = stringEncryption(3);
+        String Encrypt = stringEncryption(str3);
         System.out.println("Updated string is: " + ridSpace);
         System.out.println("Updated string is: " + ridNum);
         System.out.println("Encrypted string is: " + Encrypt);
@@ -50,14 +53,16 @@ public class Task3 {
         return str;
     }
     
-    /*public static String stringEncryption(String s) 
+    public static String stringEncryption(String s) 
     {
-        String str = "";
-        int length = s.length();
-        for (int i = 0; i < length; i++) 
-        {
-            
+        //base64 encoding
+        byte[] encodedBytes=null;
+        try {
+            encodedBytes = Base64.getEncoder().encode(s.getBytes("UTF-8"));
+        } catch (UnsupportedEncodingException ex) {
+            Logger.getLogger(Task3.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return str;
-    }*/
+        //System.out.println("encodedBytes " + new String(encodedBytes));
+        return new String(encodedBytes);
+    }
 }
